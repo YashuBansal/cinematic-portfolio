@@ -4,7 +4,7 @@ export default function CinematicBackground() {
   return (
     <div className="fixed inset-0 w-full h-full -z-50 bg-[#050505] overflow-hidden pointer-events-none">
       {/* Film Texture Noise Overlay */}
-      <div className="absolute inset-0 z-[1] opacity-20 film-grain" />
+      <div className="absolute inset-0 z-[1] opacity-20 film-grain hidden md:block" />
 
       {/* Light 1: Deep Cinematic Cyan */}
       <motion.div 
@@ -15,7 +15,7 @@ export default function CinematicBackground() {
           opacity: [0.15, 0.25, 0.15, 0.15]
         }}
         transition={{ duration: 25, repeat: Infinity, ease: "linear" }}
-        className="absolute top-1/4 -left-1/4 w-[60vw] h-[60vw] max-w-[800px] max-h-[800px] bg-[#00E5FF] rounded-full blur-[100px] will-change-transform"
+        className="hidden md:block absolute top-1/4 -left-1/4 w-[60vw] h-[60vw] max-w-[800px] max-h-[800px] bg-[#00E5FF] rounded-full blur-[100px] will-change-transform"
         style={{ transform: 'translateZ(0)' }}
       />
 
@@ -28,7 +28,7 @@ export default function CinematicBackground() {
           opacity: [0.1, 0.2, 0.1, 0.1]
         }}
         transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
-        className="absolute bottom-1/4 -right-1/4 w-[70vw] h-[70vw] max-w-[900px] max-h-[900px] bg-[#E11D48] rounded-full blur-[100px] will-change-transform"
+        className="hidden md:block absolute bottom-1/4 -right-1/4 w-[70vw] h-[70vw] max-w-[900px] max-h-[900px] bg-[#E11D48] rounded-full blur-[100px] will-change-transform"
         style={{ transform: 'translateZ(0)' }}
       />
 
@@ -41,7 +41,7 @@ export default function CinematicBackground() {
           opacity: [0.15, 0.25, 0.15, 0.15]
         }}
         transition={{ duration: 30, repeat: Infinity, ease: "linear" }}
-        className="absolute top-1/2 left-1/4 w-[50vw] h-[50vw] max-w-[700px] max-h-[700px] bg-[#7C3AED] rounded-full blur-[100px] will-change-transform"
+        className="hidden md:block absolute top-1/2 left-1/4 w-[50vw] h-[50vw] max-w-[700px] max-h-[700px] bg-[#7C3AED] rounded-full blur-[100px] will-change-transform"
         style={{ transform: 'translateZ(0)' }}
       />
     </div>

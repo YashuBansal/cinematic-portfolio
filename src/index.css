@@ -14,8 +14,10 @@
 }
 
 @layer base {
-  body {
-    @apply bg-background text-gray-200 font-sans antialiased overflow-x-hidden selection:bg-accent selection:text-black;
+  html, body {
+    @apply bg-background text-gray-200 font-sans antialiased selection:bg-accent selection:text-black;
+    overflow-x: hidden;
+    max-width: 100vw;
   }
   
   h1, h2, h3, h4, h5, h6 {
