@@ -1,11 +1,17 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { motion, useMotionValue } from 'framer-motion';
 
 export default function CustomCursor() {
   const cursorX = useMotionValue(-100);
   const cursorY = useMotionValue(-100);
+  const [isTouch, setIsTouch] = useState(false);
 
   useEffect(() => {
+    if ('ontouchstart' in window || navigator.maxTouchPoints > 0) {
+      setIsTouch(true);
+      return;
+    }
+
     const moveCursor = (e: MouseEvent) => {
       cursorX.set(e.clientX - 8);
       cursorY.set(e.clientY - 8);
@@ -19,6 +25,8 @@ export default function CustomCursor() {
       document.body.classList.remove('cursor-none');
     };
   }, [cursorX, cursorY]);
+
+  if (isTouch) return null;
 
   return (
     <motion.div
