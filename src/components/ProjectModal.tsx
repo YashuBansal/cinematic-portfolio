@@ -77,6 +77,7 @@ export default function ProjectModal({ project, isOpen, onClose }: ProjectModalP
                 <img 
                   src={project.thumbnail} 
                   alt={project.title} 
+                  loading="lazy"
                   className="w-full h-full object-cover opacity-80"
                 />
               )}
